@@ -1,0 +1,63 @@
+openapi: 3.0.3
+
+info:
+  title: My Expert System
+  description: This is API specification for My expert system
+  version: 0.0.1-SNAPSHOT
+
+servers:
+  - url: https://myexpertsystem.tk/api
+    description: This is where my api is
+
+tags:
+  - name: "Transitions"
+  - name: "States"
+
+paths:
+  /transitions/start:
+    get:
+      summary: This gets transitions for the first step
+      tags:
+        - "Transitions"
+      operationId: getStartTransitions
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transition'
+
+
+        "400":
+          description: BAD REQUEST
+        "404":
+          description: NOT FOUND
+
+components:
+  schemas:
+    Transition:
+      description: This is a transition object
+      type: object
+      properties:
+        id:
+          description: The id of transition
+          type: integer
+        answer:
+          description: The answer for this transition
+          type: string
+        isFinish:
+          description: Whether is a final state
+          type: boolean
+        beginStateId:
+          description: Begin state
+          type: integer
+        endStateId:
+          description: End state
+          type: integer
+
+
+
+  
