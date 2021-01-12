@@ -1,0 +1,36 @@
+.dropdown, .dropleft, .dropright, .dropup {
+  position: initial !important;
+  margin-bottom: 5px;
+}
+
+.navbar-light .navbar-brand {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+}
+
+.dropdown-item {
+  white-space: normal;
+}
+
+.answers {
+  display: flex;
+}
+
+#submit-answer-button {
+  flex-grow: 1;
+}
+
+#choose-answer-menu {
+  flex-grow: 2;
+}
+
+#choose-answer-button {
+  width: 100%;
+}
+
+#choose-answer-list {
+  width: 100%;
+}
+

@@ -1,0 +1,6 @@
+.navbar-light .navbar-brand {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+}

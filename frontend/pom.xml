@@ -18,6 +18,11 @@
     </properties>
 
     <build>
+      <resources>
+        <resource>
+          <directory>dist</directory>
+        </resource>
+      </resources>
       <plugins>
         <plugin>
           <groupId>com.github.eirslett</groupId>
