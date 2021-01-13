@@ -10,9 +10,7 @@ export class StepTreeComponent implements OnInit {
 
   constructor() {
     this.steps = [
-      new Step(true),
-      new Step(false),
-      new Step(false)
+      new Step(true)
     ];
   }
 

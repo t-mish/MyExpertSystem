@@ -14,6 +14,7 @@ import java.util.List;
 // Part 2 https://www.youtube.com/watch?v=TyWDJWatlwQ
 // https://www.youtube.com/watch?v=F9iF3a1Z8Y8
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class ExpertSystemController {
     private final TransitionRepository transitionRepository;
@@ -32,6 +33,11 @@ public class ExpertSystemController {
     List<Transition> getStateWithId(@PathVariable("id") Integer id) {
         return transitionRepository.findAllByBeginState_Id(id)
                 .orElseThrow(() -> new TransitionNotFoundException("No transitions found for that Id"));
+    }
+
+    @GetMapping("/state/all")
+    List<Transition> getAllState() {
+        return transitionRepository.findAll();
     }
 
     @ResponseBody

@@ -2,9 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StepTreeComponent } from './step-tree/step-tree.component';
-import { AnswerComponent } from './answer/answer.component';
-import { ExplanationComponent } from './explanation/explanation.component';
+import { StepTreeComponent } from './component/step-tree/step-tree.component';
+import { AnswerComponent } from './component/answer/answer.component';
+import { ExplanationComponent } from './component/explanation/explanation.component';
+import {TransitionService} from "./service/transition.service";
+import {HttpClientModule} from "@angular/common/http";
+import {AppRoutingModule} from "./app-routing.module";
+import {APP_BASE_HREF} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -14,9 +18,11 @@ import { ExplanationComponent } from './explanation/explanation.component';
     ExplanationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [TransitionService, {provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
