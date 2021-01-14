@@ -15,4 +15,6 @@ public class State {
     private String question;
 
     private String description;
+
+    private String solution;
 }

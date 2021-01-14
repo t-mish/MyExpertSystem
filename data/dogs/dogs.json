@@ -1,0 +1,395 @@
+{
+  "dogs":[
+    {
+      "id": 1,
+      "beginState": {
+        "id": 1,
+        "question": "Собока короткошорстная или длинношорстная?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 2,
+        "question": "Рост более или менее 50 см?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Короткая"
+    },
+    {
+      "id": 2,
+      "beginState": {
+        "id": 1,
+        "question": "Собока короткошорстная или длинношорстная?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 3,
+        "question": "Рост более или менее 50 см?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Длинная"
+    },
+    {
+      "id": 3,
+      "beginState": {
+        "id": 2,
+        "question": "Рост более или менее 50 см?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 4,
+        "question": "Длинный хвост или короткий?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Менее 50 см"
+    },
+    {
+      "id": 4,
+      "beginState": {
+        "id": 2,
+        "question": "Рост более или менее 50 см?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 5,
+        "question": "Весит более или менее 50 кг?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Более 50 см"
+    },
+    {
+      "id": 5,
+      "beginState": {
+        "id": 3,
+        "question": "Рост более или менее 50 см?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 6,
+        "question": "Характер доброжелательный или недоброжелательный?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Менее 50 см"
+    },
+    {
+      "id": 6,
+      "beginState": {
+        "id": 3,
+        "question": "Рост более или менее 50 см?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 7,
+        "question": "Рост более или менее 70 см?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Более 50 см"
+    },
+    {
+      "id": 7,
+      "beginState": {
+        "id": 4,
+        "question": "Длинный хвост или короткий?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 8,
+        "question": "Уши короткие или длинные?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Длинный"
+    },
+    {
+      "id": 8,
+      "beginState": {
+        "id": 4,
+        "question": "Длинный хвост или короткий?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 9,
+        "question": null,
+        "description": null,
+        "solution": "Английский бульдог"
+      },
+      "isFinish": true,
+      "answer": "Короткий"
+    },
+    {
+      "id": 9,
+      "beginState": {
+        "id": 5,
+        "question": "Весит более или менее 50 кг?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 10,
+        "question": null,
+        "description": null,
+        "solution": "Фоксхаунд"
+      },
+      "isFinish": true,
+      "answer": "Менее 50 кг"
+    },
+    {
+      "id": 10,
+      "beginState": {
+        "id": 5,
+        "question": "Весит более или менее 50 кг?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 11,
+        "question": null,
+        "description": null,
+        "solution": "Датский дог"
+      },
+      "isFinish": true,
+      "answer": "Более 50 кг"
+    },
+    {
+      "id": 11,
+      "beginState": {
+        "id": 6,
+        "question": "Характер доброжелательный или недоброжелательный?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 12,
+        "question": null,
+        "description": null,
+        "solution": "Кокер-спаниель"
+      },
+      "isFinish": true,
+      "answer": "Доброжелательный"
+    },
+    {
+      "id": 12,
+      "beginState": {
+        "id": 6,
+        "question": "Характер доброжелательный или недоброжелательный?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 13,
+        "question": null,
+        "description": null,
+        "solution": "Ирландский сеттер"
+      },
+      "isFinish": true,
+      "answer": "Недоброжелательный"
+    },
+    {
+      "id": 13,
+      "beginState": {
+        "id": 7,
+        "question": "Рост более или менее 70 см?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 14,
+        "question": "Уши длинные или короткие?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Менее 70 см"
+    },
+    {
+      "id": 14,
+      "beginState": {
+        "id": 7,
+        "question": "Рост более или менее 70 см?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 15,
+        "question": "Окрас не белый, рыжий с белыми пятнами или полностью белый?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Более 70 см"
+    },
+    {
+      "id": 15,
+      "beginState": {
+        "id": 8,
+        "question": "Уши короткие или длинные?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 16,
+        "question": null,
+        "description": null,
+        "solution": "Гончая"
+      },
+      "isFinish": true,
+      "answer": "Длинные"
+    },
+    {
+      "id": 16,
+      "beginState": {
+        "id": 8,
+        "question": "Уши короткие или длинные?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 17,
+        "question": "Тело короткое или длинное?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": false,
+      "answer": "Короткие"
+    },
+    {
+      "id": 17,
+      "beginState": {
+        "id": 14,
+        "question": "Уши длинные или короткие?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 18,
+        "question": null,
+        "description": null,
+        "solution": "Большой вандейский грифон"
+      },
+      "isFinish": true,
+      "answer": "Длинные"
+    },
+    {
+      "id": 18,
+      "beginState": {
+        "id": 14,
+        "question": "Уши длинные или короткие?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 19,
+        "question": null,
+        "description": null,
+        "solution": "Колли"
+      },
+      "isFinish": true,
+      "answer": "Короткие"
+    },
+    {
+      "id": 19,
+      "beginState": {
+        "id": 15,
+        "question": "Окрас не белый, рыжий с белыми пятнами или полностью белый?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 20,
+        "question": null,
+        "description": null,
+        "solution": "Ньюфаундленд"
+      },
+      "isFinish": true,
+      "answer": "Не белый"
+    },
+    {
+      "id": 20,
+      "beginState": {
+        "id": 15,
+        "question": "Окрас не белый, рыжий с белыми пятнами или полностью белый?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 21,
+        "question": null,
+        "description": null,
+        "solution": "Сенбернар"
+      },
+      "isFinish": true,
+      "answer": "Рыжий с белыми отметинами"
+    },
+    {
+      "id": 21,
+      "beginState": {
+        "id": 15,
+        "question": "Окрас не белый, рыжий с белыми пятнами или полностью белый?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 22,
+        "question": null,
+        "description": null,
+        "solution": "Ирландский волкодав"
+      },
+      "isFinish": true,
+      "answer": "Белый"
+    },
+    {
+      "id": 22,
+      "beginState": {
+        "id": 17,
+        "question": "Тело короткое или длинное?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 23,
+        "question": null,
+        "description": null,
+        "solution": "Мопс"
+      },
+      "isFinish": true,
+      "answer": "Короткое"
+    },
+    {
+      "id": 23,
+      "beginState": {
+        "id": 17,
+        "question": "Тело короткое или длинное?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 24,
+        "question": null,
+        "description": null,
+        "solution": "Чихуахуа"
+      },
+      "isFinish": true,
+      "answer": "Длинное"
+    }
+  ]
+}

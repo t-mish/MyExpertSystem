@@ -1,0 +1,242 @@
+{
+  "plants": [
+    {
+      "id": 1,
+      "beginState": {
+        "id": 1,
+        "question": "Какой стебель у растения - древесный или зелёный?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 2,
+        "question": null,
+        "description": null,
+        "solution": "Тип - травянистые"
+      },
+      "isFinish": false,
+      "answer": "Стебель - зеленый"
+    },
+    {
+      "id": 2,
+      "beginState": {
+        "id": 1,
+        "question": "Какой стебель у растения - древесный или зелёный?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 3,
+        "question": "Какое положение стебля - стелящееся или прямостоящее?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": true,
+      "answer": "Стебель - древесный"
+    },
+    {
+      "id": 3,
+      "beginState": {
+        "id": 3,
+        "question": "Какое положение стебля - стелящееся или прямостоящее?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 4,
+        "question": null,
+        "description": null,
+        "solution": "Тип - лианы"
+      },
+      "isFinish": false,
+      "answer": "Положение - стелящееся"
+    },
+    {
+      "id": 4,
+      "beginState": {
+        "id": 3,
+        "question": "Какое положение стебля - стелящееся или прямостоящее?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 5,
+        "question": "Имеет ли растение один основной ствол?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": true,
+      "answer": "Положение - прямое"
+    },
+    {
+      "id": 5,
+      "beginState": {
+        "id": 5,
+        "question": "Имеет ли растение один основной ствол?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 6,
+        "question": "Имеют ли растения широкую и плоскую форму листа?",
+        "description": null,
+        "solution": "Тип - деревья"
+      },
+      "isFinish": false,
+      "answer": "Один ствол - да"
+    },
+    {
+      "id": 6,
+      "beginState": {
+        "id": 5,
+        "question": "Имеет ли растение один основной ствол?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 7,
+        "question": null,
+        "description": null,
+        "solution": "Тип - кустарниковые"
+      },
+      "isFinish": true,
+      "answer": "Один ствол - нет"
+    },
+    {
+      "id": 7,
+      "beginState": {
+        "id": 6,
+        "question": "Имеют ли растения широкую и плоскую форму листа?",
+        "description": null,
+        "solution": "Тип - деревья"
+      },
+      "endState": {
+        "id": 8,
+        "question": null,
+        "description": null,
+        "solution": "Класс - покрытосеменные"
+      },
+      "isFinish": true,
+      "answer": "Форма листа широкая и плоская - да"
+    },
+    {
+      "id": 8,
+      "beginState": {
+        "id": 6,
+        "question": "Имеют ли растения широкую и плоскую форму листа?",
+        "description": null,
+        "solution": "Тип - деревья"
+      },
+      "endState": {
+        "id": 9,
+        "question": "Какова форма листа: чешуеобразная или иглоподобная?",
+        "description": null,
+        "solution": "Класс - голосеменные"
+      },
+      "isFinish": true,
+      "answer": "Форма листа широкая и плоская - нет"
+    },
+    {
+      "id": 9,
+      "beginState": {
+        "id": 9,
+        "question": "Какова форма листа: чешуеобразная или иглоподобная?",
+        "description": null,
+        "solution": "Класс - голосеменные"
+      },
+      "endState": {
+        "id": 10,
+        "question": null,
+        "description": null,
+        "solution": "Семейство - кипарисовые"
+      },
+      "isFinish": true,
+      "answer": "Форма листа - чешуеобразная"
+    },
+    {
+      "id": 10,
+      "beginState": {
+        "id": 9,
+        "question": "Какова форма листа: чешуеобразная или иглоподобная?",
+        "description": null,
+        "solution": "Класс - голосеменные"
+      },
+      "endState": {
+        "id": 11,
+        "question": "Какова конфигурация расположения игл: хаотическая или в 2 ряда?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": true,
+      "answer": "Форма листа - иглоподобная"
+    },
+    {
+      "id": 11,
+      "beginState": {
+        "id": 11,
+        "question": "Какова конфигурация расположения игл: хаотическая или в 2 ряда?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 12,
+        "question": null,
+        "description": null,
+        "solution": "Семество - сосновые"
+      },
+      "isFinish": false,
+      "answer": "Конфигурация - хаотическая"
+    },
+    {
+      "id": 12,
+      "beginState": {
+        "id": 11,
+        "question": "Какова конфигурация расположения игл: хаотическая или в 2 ряда?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 13,
+        "question": "Имеется ли серебристая полоса снизу иглы?",
+        "description": null,
+        "solution": null
+      },
+      "isFinish": true,
+      "answer": "Конфигурация - 2 ряда"
+    },
+    {
+      "id": 13,
+      "beginState": {
+        "id": 13,
+        "question": "Имеется ли серебристая полоса снизу иглы?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 12,
+        "question": null,
+        "description": null,
+        "solution": "Семество - сосновые"
+      },
+      "isFinish": false,
+      "answer": "Серебряная полоса - да"
+    },
+    {
+      "id": 14,
+      "beginState": {
+        "id": 13,
+        "question": "Имеется ли серебристая полоса снизу иглы?",
+        "description": null,
+        "solution": null
+      },
+      "endState": {
+        "id": 14,
+        "question": null,
+        "description": null,
+        "solution": "Семейство - болотный кипарис"
+      },
+      "isFinish": true,
+      "answer": "Серебряная полоса - нет"
+    }
+  ]
+}
