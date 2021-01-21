@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {State, Transition} from "../../model/transition";
-import {TransitionService} from "../../service/transition.service";
+import {Step} from "../../app.component";
 
 @Component({
   selector: 'app-answer',
@@ -9,8 +8,7 @@ import {TransitionService} from "../../service/transition.service";
 })
 export class AnswerComponent implements OnInit {
 
-  @Input() currentState: State;
-  @Input() answer: string;
+  @Input() step: Step;
 
   constructor() { }
 

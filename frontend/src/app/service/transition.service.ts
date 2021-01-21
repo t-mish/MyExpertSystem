@@ -11,7 +11,7 @@ export class TransitionService {
   private transitionsUrl: string;
 
   constructor(private http: HttpClient) {
-    this.transitionsUrl = 'http://localhost:8090/api/state';
+    this.transitionsUrl = 'https://myexpertsystem.tk/cameras';
   }
 
   findFirst(): Observable<Transition[]> {
@@ -23,6 +23,6 @@ export class TransitionService {
   }
 
   findAll(): Observable<Transition[]> {
-    return this.http.get<Transition[]>(this.transitionsUrl + '/' + 'all');
+    return this.http.get<Transition[]>(this.transitionsUrl);
   }
 }

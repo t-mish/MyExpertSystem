@@ -3,8 +3,8 @@
   <div class="row">
     <div class="col-12 col-lg-8 ml-auto mr-auto mb-4" style="margin-top: 24px;">
       <div class="multisteps-form-progress">
-        <ng-container *ngFor="let step of steps; index as i">
-          <a [ngClass]="step.currentClasses" [ngStyle]="step.currentStyles"
+        <ng-container *ngFor="let button of buttons; index as i">
+          <a [ngClass]="button.currentClasses" [ngStyle]="button.currentStyles"
                                           role="button" title="User Info">Вопрос №{{ i+1 }}</a>
         </ng-container>
       </div>

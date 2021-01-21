@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Step} from "../../app.component";
 
 @Component({
   selector: 'app-explanation',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explanation.component.css']
 })
 export class ExplanationComponent implements OnInit {
+  @Input() step: Step;
 
   constructor() { }
 

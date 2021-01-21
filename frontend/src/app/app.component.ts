@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {State, Transition} from "./model/transition";
 import {TransitionService} from "./service/transition.service";
+import * as _ from "underscore";
 
 @Component({
   selector: 'app-root',
@@ -9,28 +10,41 @@ import {TransitionService} from "./service/transition.service";
 })
 export class AppComponent implements OnInit{
 
-  currentState: State;
-  isFinished: boolean;
-  answer: string;
-
   private transitions: Transition[];
+  steps: Step[] = [];
+  currentStep: Step;
+  currentStepIndex: number;
 
   constructor(
     private transitionService: TransitionService
   ) {
-
-  }
-
-  ngOnInit(): void {
     this.transitionService.findAll().subscribe(data => {
       this.transitions = data;
-      this.updateCurrent(1);
+      this.steps.push(new Step(this.transitions[0].beginState, this.transitions));
+      this.currentStepIndex = 0;
+      this.currentStep = this.steps[0];
     });
   }
 
-  updateCurrent(transitionId: number): void {
-    this.currentState = this.transitions[transitionId].beginState;
-    this.isFinished = this.transitions[transitionId].isFinish;
-    this.answer = this.transitions[transitionId].answer;
+  ngOnInit(): void {
   }
+}
+
+export class Step {
+  nextTransitions: Transition[] = [];
+  currentState: State;
+
+  constructor(
+    currentState: State,
+    transitions: Transition[]
+  ) {
+    this.currentState = currentState;
+
+    for (let transition of transitions) {
+      if (_.isEqual(transition.beginState, this.currentState)) {
+        this.nextTransitions.push(transition);
+      }
+    }
+  }
+
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Step} from "../../app.component";
 
 @Component({
   selector: 'app-step-tree',
@@ -6,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./step-tree.component.css']
 })
 export class StepTreeComponent implements OnInit {
-  steps: Step[];
+  @Input() step: Step;
+
+  buttons: Button[];
 
   constructor() {
-    this.steps = [
-      new Step(true)
+    this.buttons = [
+      new Button(true)
     ];
   }
 
@@ -22,7 +25,7 @@ export class StepTreeComponent implements OnInit {
   }
 }
 
-export class Step {
+export class Button {
   currentClasses = {
     'btn': true,
     'multisteps-form-progress-btn': true,
