@@ -11,6 +11,7 @@ import * as _ from "underscore";
 export class AppComponent implements OnInit{
 
   private transitions: Transition[];
+
   steps: Step[] = [];
   currentStep: Step;
   currentStepIndex: number;
@@ -20,10 +21,23 @@ export class AppComponent implements OnInit{
   ) {
     this.transitionService.findAll().subscribe(data => {
       this.transitions = data;
-      this.steps.push(new Step(this.transitions[0].beginState, this.transitions));
+
+      let nextState: State = this.transitions[0].beginState;
+      let isFinish: boolean = this.transitions[0].isFinish;
+
+      this.steps.push(new Step(nextState, isFinish, this.transitions));
       this.currentStepIndex = 0;
       this.currentStep = this.steps[0];
     });
+  }
+
+  answerSelectedHandler(nextTransition: Transition) {
+    let nextState: State = nextTransition.endState
+    let isFinish: boolean = nextTransition.isFinish;
+
+    this.steps.push(new Step(nextState, isFinish, this.transitions));
+    this.currentStepIndex++;
+    this.currentStep = this.steps[this.currentStepIndex];
   }
 
   ngOnInit(): void {
@@ -32,11 +46,11 @@ export class AppComponent implements OnInit{
 
 export class Step {
   nextTransitions: Transition[] = [];
-  currentState: State;
 
   constructor(
-    currentState: State,
-    transitions: Transition[]
+    public currentState: State,
+    public isFinish: boolean,
+    transitions: Transition[],
   ) {
     this.currentState = currentState;
 

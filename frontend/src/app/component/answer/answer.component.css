@@ -1,12 +1,3 @@
-.dropdown, .dropleft, .dropright, .dropup {
-  position: initial !important;
-  margin-bottom: 5px;
-}
-
-.dropdown-item {
-  white-space: normal;
-}
-
 .answers {
   display: flex;
 }
