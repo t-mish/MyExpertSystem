@@ -10,14 +10,15 @@ import {State, Transition} from "../../model/transition";
 export class AnswerComponent {
 
   @Input() step: Step;
+  @Input() currentStepIndex: number;
 
-  @Output() nextTransition: EventEmitter<Transition> = new EventEmitter<Transition>();
+  @Output() selectedAnswerIndexEmitter: EventEmitter<number> = new EventEmitter<number>();
 
   selectedAnswerIndex: number;
 
   constructor() { }
 
   onClicked() {
-    this.nextTransition.emit(this.step.nextTransitions[this.selectedAnswerIndex]);
+    this.selectedAnswerIndexEmitter.emit(this.selectedAnswerIndex);
   }
 }

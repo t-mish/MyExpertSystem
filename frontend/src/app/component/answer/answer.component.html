@@ -1,19 +1,24 @@
 <div style="margin-top: 10px;margin-bottom: 10px;">
   <form>
-    <h5 style="margin-bottom: 2px;">Вопрос №1</h5><span style="font-size: 16px;">{{step.currentState.question}}</span>
-    <hr>
-    <div *ngIf="!step.isFinish" class="answers" style="height: 38px;">
-      <div class="dropdown" id="choose-answer-menu" style="height: 38px;">
-        <select [(ngModel)]="selectedAnswerIndex" name="first" required class="form-select form-select-md mb-3" id="choose-answer-list">
-          <option selected disabled hidden>Выберите вариант ответа</option>
-          <option *ngFor="let answer of step.nextTransitions; index as i" value="{{i}}">
-            {{answer.answer}}
-          </option>
-        </select>
+    <ng-template [ngIf]="step.isFinish && step.currentState.solution != null" [ngIfElse]="elseBlock">
+      <h4 style="margin-bottom: 2px;">Решение</h4>
+      {{step.currentState.solution == null ? "Ответа нет" : step.currentState.solution}}
+    </ng-template>
+    <ng-template #elseBlock>
+      <h5 style="margin-bottom: 2px;">Вопрос №{{currentStepIndex+1}}</h5><span style="font-size: 16px;">{{step.currentState.question}}</span>
+      <hr>
+      <div *ngIf="!step.isFinish" class="answers" style="height: 38px;">
+        <div class="dropdown" id="choose-answer-menu" style="height: 38px;">
+          <select [(ngModel)]="selectedAnswerIndex" name="first" required class="form-select form-select-md mb-3" id="choose-answer-list">
+            <option *ngFor="let answer of step.nextTransitions; index as i" value="{{i}}" selected="{{i == step.selectedAnswerIndex}}">
+              {{answer.answer}}
+            </option>
+          </select>
+        </div>
+        <button (click)="onClicked()" class="btn btn-primary answers-button" id="submit-answer-button" type="button"
+                style="height: 38px;margin-left: 10px;">Дальше
+        </button>
       </div>
-      <button (click)="onClicked()" class="btn btn-primary answers-button" id="submit-answer-button" type="button"
-              style="height: 38px;margin-left: 10px;">Дальше
-      </button>
-    </div>
+    </ng-template>
   </form>
 </div>

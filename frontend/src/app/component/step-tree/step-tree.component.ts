@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Step} from "../../app.component";
+import {Transition} from "../../model/transition";
 
 @Component({
   selector: 'app-step-tree',
@@ -7,40 +8,27 @@ import {Step} from "../../app.component";
   styleUrls: ['./step-tree.component.css']
 })
 export class StepTreeComponent implements OnInit {
-  @Input() step: Step;
+  @Input() steps: Step[];
+  @Input() currentStepIndex: number;
 
-  buttons: Button[];
+  @Output() selectedStepIndex: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() {
-    this.buttons = [
-      new Button(true)
-    ];
-  }
+  selectedAnswerIndex: number;
 
-  ngOnInit(): void {
-  }
-
-  public setBtnProgress(index: number): boolean {
-    return true;
-  }
-}
-
-export class Button {
   currentClasses = {
     'btn': true,
     'multisteps-form-progress-btn': true,
-    'js-active': false
   };
+
   currentStyles = {
     height: 0
   };
 
-  constructor(isActive: boolean) {
-    this.currentClasses['js-active'] = isActive;
+  onClicked(index: number) {
+    this.selectedStepIndex.emit(index);
   }
 
-  setButtonActive(isActive: boolean): void {
-    this.currentClasses['js-active'] = isActive;
+  ngOnInit(): void {
   }
 }
 

@@ -10,6 +10,7 @@ export class State {
   id: string;
   question: string;
   description: string;
+  solution: string;
 }
 
 

@@ -10,8 +10,16 @@ export class TransitionService {
 
   private transitionsUrl: string;
 
+  static readonly PLANTS_URL: string = 'https://myexpertsystem.tk/plants';
+  static readonly DOGS_URL: string = 'https://myexpertsystem.tk/dogs';
+  static readonly CAMERAS_URL: string = 'https://myexpertsystem.tk/cameras';
+
   constructor(private http: HttpClient) {
-    this.transitionsUrl = 'https://myexpertsystem.tk/cameras';
+    this.transitionsUrl = TransitionService.CAMERAS_URL;
+  }
+
+  setTransitionUrl(url: string): void {
+    this.transitionsUrl = url;
   }
 
   findFirst(): Observable<Transition[]> {

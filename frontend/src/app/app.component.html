@@ -1,20 +1,30 @@
 <!-- Start: 1 Row 1 Column -->
 <div>
   <nav class="navbar navbar-light navbar-expand-md d-flex">
-    <div class="container-fluid"><a class="navbar-brand" href="#" style="margin-right: 0px;">Expert System v0.1</a>
+    <div class="container-fluid ml-auto mr-auto justify-content-center">
+      <a class="nav-link" (click)="onTopicSelected(0)" [routerLink]="" style="margin-right: 0px;">Растения</a>
+      <a class="nav-link" (click)="onTopicSelected(1)" [routerLink]="" style="margin-right: 0px;">Собаки</a>
+      <a class="nav-link" (click)="onTopicSelected(2)" [routerLink]="" style="margin-right: 0px;">Камеры</a>
     </div>
   </nav>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-xl-10 offset-xl-1">
-        <app-step-tree [step]="currentStep"></app-step-tree>
+        <app-step-tree [steps]="steps" [currentStepIndex]="currentStepIndex" (selectedStepIndex)="stepSelectedHandler($event)"></app-step-tree>
       </div>
-      <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4 offset-xl-1">
-        <app-answer [step]="currentStep" (nextTransition)="answerSelectedHandler($event)"></app-answer>
-      </div>
-      <div class="col-lg-7 col-xl-6 offset-xl-0">
-        <app-explanation [step]="currentStep"></app-explanation>
-      </div>
+      <ng-template [ngIf]="currentStep.currentState.description != null" [ngIfElse]="elseBlock">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4 offset-xl-1">
+          <app-answer [step]="currentStep" [currentStepIndex]="currentStepIndex" (selectedAnswerIndexEmitter)="answerSelectedHandler($event)"></app-answer>
+        </div>
+        <div class="col-lg-7 col-xl-6 offset-xl-0">
+          <app-explanation [step]="currentStep"></app-explanation>
+        </div>
+      </ng-template>
+      <ng-template #elseBlock>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6 offset-xl-3 offset-lg-3">
+          <app-answer [step]="currentStep" [currentStepIndex]="currentStepIndex" (selectedAnswerIndexEmitter)="answerSelectedHandler($event)"></app-answer>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>

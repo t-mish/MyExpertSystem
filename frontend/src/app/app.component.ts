@@ -12,13 +12,18 @@ export class AppComponent implements OnInit{
 
   private transitions: Transition[];
 
-  steps: Step[] = [];
+  steps: Step[];
   currentStep: Step;
   currentStepIndex: number;
 
   constructor(
     private transitionService: TransitionService
   ) {
+    this.loadData();
+  }
+
+  private loadData(): void {
+    this.steps = [];
     this.transitionService.findAll().subscribe(data => {
       this.transitions = data;
 
@@ -31,21 +36,45 @@ export class AppComponent implements OnInit{
     });
   }
 
-  answerSelectedHandler(nextTransition: Transition) {
-    let nextState: State = nextTransition.endState
-    let isFinish: boolean = nextTransition.isFinish;
+  ngOnInit(): void {
+  }
+
+  answerSelectedHandler(selectedAnswerIndex: number) {
+
+    let nextState: State = this.currentStep.nextTransitions[selectedAnswerIndex].endState;
+    let isFinish: boolean = this.currentStep.nextTransitions[selectedAnswerIndex].isFinish;
+
+    if (this.steps.length > this.currentStepIndex + 1) {
+      this.steps = _.first(this.steps,this.currentStepIndex+1);
+    }
 
     this.steps.push(new Step(nextState, isFinish, this.transitions));
     this.currentStepIndex++;
+
+    this.currentStep = this.steps[this.currentStepIndex];
+    this.currentStep.selectedAnswerIndex = selectedAnswerIndex;
+  }
+
+  stepSelectedHandler(index: number) {
+    this.currentStepIndex = index;
     this.currentStep = this.steps[this.currentStepIndex];
   }
 
-  ngOnInit(): void {
+  onTopicSelected(topicIndex: number) {
+    if (topicIndex == 0) {
+      this.transitionService.setTransitionUrl(TransitionService.PLANTS_URL);
+    } else if (topicIndex == 1) {
+      this.transitionService.setTransitionUrl(TransitionService.DOGS_URL);
+    } else if (topicIndex == 2) {
+      this.transitionService.setTransitionUrl(TransitionService.CAMERAS_URL);
+    }
+    this.loadData();
   }
 }
 
 export class Step {
   nextTransitions: Transition[] = [];
+  selectedAnswerIndex: number = 0;
 
   constructor(
     public currentState: State,
