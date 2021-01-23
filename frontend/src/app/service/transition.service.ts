@@ -15,7 +15,7 @@ export class TransitionService {
   static readonly CAMERAS_URL: string = 'https://myexpertsystem.tk/cameras';
 
   constructor(private http: HttpClient) {
-    this.transitionsUrl = TransitionService.CAMERAS_URL;
+    this.transitionsUrl = TransitionService.PLANTS_URL;
   }
 
   setTransitionUrl(url: string): void {

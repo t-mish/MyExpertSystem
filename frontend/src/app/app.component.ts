@@ -28,9 +28,8 @@ export class AppComponent implements OnInit{
       this.transitions = data;
 
       let nextState: State = this.transitions[0].beginState;
-      let isFinish: boolean = this.transitions[0].isFinish;
 
-      this.steps.push(new Step(nextState, isFinish, this.transitions));
+      this.steps.push(new Step(nextState, false, this.transitions));
       this.currentStepIndex = 0;
       this.currentStep = this.steps[0];
     });
